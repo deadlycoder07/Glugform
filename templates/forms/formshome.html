@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Google forms</title>
+    <style>
+         h4 #head_jumbo{
+            margin-left: 2px;
+            padding-left: 2px;
+            font-family: "Agency FB";
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+{% block user %}
+    <strong>welcome</strong> {{ user.username }}
+{% endblock %}
+{% block tabs %}
+    <li ><a href="user/logout" id="contact">Logout</a></li>
+{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+        <div class="jumbotron-main jumbotron">
+           <div class="col-sm-1">
+            <h5 id="head_jumbo" >Templates:</h5>
+
+
+            </div>
+
+          <div class="container">
+              <div class="row">
+
+              </div>
+          </div>
+        </div>
+       <div class="container">
+
+       </div>
+{% else %}
+   <meta http-equiv="REFRESH" content="0;url={{ "user/login" }}">
+{% endif %}
+{% endblock %}
+</body>
+</html>

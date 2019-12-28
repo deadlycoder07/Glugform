@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register for GoogleForms</title>
+    <style>
+        .container{
+            padding:5px;
+            margin-top:3px;
+        }
+        .helptext{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+{% block content %}
+<div class="container">
+<br>
+ <br>
+<h1 class="text-center">Register for Googleforms</h1>
+    <div class="col-md-4 col-lg-offset-4">
+        <div class="well">
+<form method="post" class="form-group">
+    {{ form.as_p}}
+     {% csrf_token %}
+    <button class="btn btn-group-justified btn-primary" type="submit">
+        Register
+    </button>
+</form>
+        </div>
+     </div>
+</div>
+    <script>
+
+    </script>
+{% endblock %}
+
+</body>
+</html>

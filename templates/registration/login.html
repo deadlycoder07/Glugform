@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+{% block content %}
+<div class="container">
+    <br>
+    <br>
+<h1 class="text-center">Login</h1>
+    <div class="col-md-4 col-lg-offset-4">
+        <div class="well">
+<form method="post" class="form-group">
+    {{ form.as_p}}
+     {% csrf_token %}
+    <button class="btn btn-group-justified btn-primary" type="submit">
+        Login
+    </button>
+</form>
+        </div>
+     </div>
+</div>
+{% endblock %}
+</body>
+</html>
