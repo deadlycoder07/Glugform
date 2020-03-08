@@ -7,5 +7,19 @@
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:H:\PycharmProjects\Gforms\db.sqlite3</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="Django default" uuid="f586fd28-0052-41b1-9d19-e69cd8026d9d">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/Gforms/settings.py</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:H:\PycharmProjects\Gforms\db.sqlite3</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="gform@localhost" uuid="2ff553d9-3007-4716-8d5e-bd997a79da3a">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:8080/gform</jdbc-url>
+    </data-source>
   </component>
 </project>

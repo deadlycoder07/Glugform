@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Google forms</title>
+</head>
+<body>
+{% block content %}
+ <div class="panel panel-flat border-left-xlg border-left-success">
+        <div class="panel-heading">
+            <h4 class="panel-title text-semibold">My Forms</h4>
+            <div class="heading-elements">
+                <a href="" class="btn btn-primary heading-btn">All Forms</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-flat border-top-lg border-top-success">
+        <div class="panel-heading">
+            <h5 class="panel-title">Create a Form</h5>
+        </div>
+        <div class="panel-body">
+
+            <form method="post">
+                {% csrf_token %}
+                {{ form|bootstrap }}<button class="right btn btn-primary">Create</button> </form>
+        </div>
+
+    </div>
+{% endblock %}
+</body>

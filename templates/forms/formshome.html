@@ -7,12 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Google forms</title>
     <style>
-         h4 #head_jumbo{
-            margin-left: 2px;
-            padding-left: 2px;
-            font-family: "Agency FB";
-            font-weight: bold;
-        }
+     .container{
+         width:100%;
+         padding-top: 10px;
+     }
+
     </style>
 </head>
 <body>
@@ -25,22 +24,61 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-        <div class="jumbotron-main jumbotron">
-           <div class="col-sm-1">
-            <h5 id="head_jumbo" >Templates:</h5>
 
+ <div class="container">
+   <div class="page-container">
+        <div class="page-content">
+            <div class="content-wrapper">
+                <div class="content">
 
+     <div class="panel panel-flat border-left-xlg border-left-primary">
+        <div class="panel-heading">
+            <h4 class="panel-title text-semibold">My Forms</h4>
+            <div class="heading-elements">
+                <a href="form/create" class="btn btn-success heading-btn">Create a Form</a>
             </div>
-
-          <div class="container">
-              <div class="row">
-
-              </div>
-          </div>
         </div>
-       <div class="container">
+    </div>
 
-       </div>
+
+    <div class="panel panel-flat">
+                    <table class="table datatable">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Form Title</th>
+                        <th class="text-center">description</th>
+                        <th class="text-center">Role</th>
+                        <th class="text-center">Status</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     {% for form in form %}
+                        <tr>
+                            <td></td>
+                            <td>{{ form.title }}</td>
+                            <td class="text-center">{{ form.description }}</td>
+                            <td class="text-center"><span class="label bg-primary">Owner</span></td>
+                            <td class="text-center"><span class="label bg-primary">{{ form.status }}</span></td>
+                            <td class="text-center">
+                                <a href="http://127.0.0.1:8000/forms/8V0qxDeD0tcfHBOYYRvbSexg9sHtjffM" class="btn btn-xs btn-default mb-5">View</a>
+                                <a href="http://127.0.0.1:8000/forms/8V0qxDeD0tcfHBOYYRvbSexg9sHtjffM/edit" class="btn btn-xs btn-primary mb-5 position-right">Edit</a>
+                                <a href="http://127.0.0.1:8000/forms/8V0qxDeD0tcfHBOYYRvbSexg9sHtjffM" class="btn btn-xs btn-danger mb-5 position-right" data-id="8V0qxDeD0tcfHBOYYRvbSexg9sHtjffM" data-method="delete" data-item="form" data-ajax="true">Delete</a>
+                            </td>
+                        </tr>
+                     {% endfor %}
+
+
+                 </tbody>
+            </table>
+            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </div>
 {% else %}
    <meta http-equiv="REFRESH" content="0;url={{ "user/login" }}">
 {% endif %}

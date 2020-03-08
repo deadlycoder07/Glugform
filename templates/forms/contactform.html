@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>contact form</title>
+    <style>
+        .panel-body{
+            margin-top: 50px;
+        }
+
+    </style>
+</head>
+<body>
+{% block content %}
+    <div class="panel-body center">
+    {% load crispy_forms_tags %}
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+    </div>
+{% endblock %}
+
+</body>
+</html>
