@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Google forms</title>
     <style>
-     .container{
+     .page-container{
          width:100%;
          padding-top: 10px;
      }
@@ -25,7 +25,10 @@
 {% block content %}
 {% if user.is_authenticated %}
 
- <div class="container">
+<br>
+<br>
+
+
    <div class="page-container">
         <div class="page-content">
             <div class="content-wrapper">
@@ -78,7 +81,6 @@
         </div>
     </div>
 
-  </div>
 {% else %}
    <meta http-equiv="REFRESH" content="0;url={{ "user/login" }}">
 {% endif %}
